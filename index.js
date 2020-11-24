@@ -1,33 +1,24 @@
-function bingo(input) {
-    if(!input){
-        return;
-    }
-    var result = [];
-    calcdigits(input, result);
-    var value = "";
-    if(result.length === 9){
-        console.log(0);
-    }else{
-        for (var j = 1; j < 50; j++){
-            if(result.length === 9){
-                break;
-            }
-            value = input * j;
-            calcdigits(value, result);
-        }
-        console.log(j);
-    }
-    console.log(result);
-}
+//bubble sort
 
-function calcdigits(input, result) {
-    input = input.toString();
-    for (var i = 0; i < input.length; i++) {
-        if(input[i] === "0"){
-            continue;
-        }
-        if(result.indexOf(input[i]) === -1){
-            result.push(input[i]);
+function bubbleSort(input1) {
+    var input1 = [5, 4, 1, 3, 9, 7];
+    var input2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+    var input3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+   
+
+    input1 = input2;
+    var iLength = input1.length;
+    var temp;
+
+    for (var j = 0; j <iLength-1; j++){
+        for (var i = 0; i < iLength -1 - j; i++) {
+            if (input1[i] > input1[i + 1]) {
+                temp = input1[i + 1];
+                input1[i + 1] = input1[i];
+                input1[i] = temp;
+            }
         }
     }
+
+    console.log(input1);
 }
